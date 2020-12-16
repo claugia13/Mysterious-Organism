@@ -60,9 +60,13 @@ if (randBaseIndex !== -1) {
     const survivalPercentage = (((cBaseCount + gBaseCount)/this.dna.length) * 100).toFixed(2);
     if (survivalPercentage >= 60){
       return true;
+      // console.log('The survival percentage of this organism is ' +survivalPercentage + '%.  This organism WILL likely survive.'); 
+      // willLikelySurvive is working but logs this to console endlessly when this console.log is run
     } else {
       return false;
-    } console.log('willLikelySurvive: ' + this.willLikelySurvive());
+    // console.log('The survival percentage of this organism is ' +survivalPercentage + '%.  This organism will likely NOT survive.');
+  // willLikelySurvive is working but logs this to console endlessly when this console.log is run  
+  }
    } // end of willLikelySurvive function
   }; // end of return  
 }; // end of pAequor factory function
@@ -75,13 +79,17 @@ let pAequorCount = 0;
   let newObject = pAequorFactory(objectNum, mockUpStrand());
   if (newObject.willLikelySurvive() === true){
 survivingPAequor.push(newObject);
+// console.log('survivingPAequor: ' + survivingPAequor); 
+// console.log('surivingPAequor.length: ' + survivingPAequor.length);
+//survivingPAequor is working as intended withe the exception of returning [object, Object] instead of the actual data
+
   }
 pAequorCount++;
 }
-  console.log('pAequors that will likely survive: ' + survivingPAequor);
+  // console.log('pAequors that will likely survive: ' + survivingPAequor);
 
 
-
+console.log('willLikelySurvive: ' + pAequorFactory(1, mockUpStrand).willLikelySurvive());
 
 
 
