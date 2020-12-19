@@ -1,9 +1,8 @@
 # Mysterious Organism 
-> Codecademy project
+> Codecademy Javascript project
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -17,19 +16,16 @@ Context: You’re part of a research team that has found a new mysterious organi
 
 As you progress through the steps, use the terminal and console.log() statements to check the output of your loops and functions.
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-
 ## Technologies
 * Javascript - ES6
 
-
 ## Setup
-Run in Visual Studio Code
+Run locally using Node.js.
 
 ## Code Examples
 Provided starting code from Codecademy:
-`// Returns a random DNA base
+```javascript
+// Returns a random DNA base
 const returnRandBase = () => {
   const dnaBases = ['A', 'T', 'C', 'G']
   return dnaBases[Math.floor(Math.random() * 4)] 
@@ -42,7 +38,8 @@ const mockUpStrand = () => {
     newStrand.push(returnRandBase())
   }
   return newStrand
-}`
+}
+```
 
 ## Features
 List of Project Requirements/Steps from Codecademy
