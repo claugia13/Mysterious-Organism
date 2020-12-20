@@ -15,10 +15,10 @@ const mockUpStrand = () => {
 console.log('mockUpStrand: ' + mockUpStrand());
 
 // Returns an object that contains the properties specimenNum and dna
-const pAequorFactory = (number, array) => {
+const pAequorFactory = (specimenNum, dna) => {
     return{
-    specimenNum: number,
-    dna: array,
+    specimenNum,
+    dna,
     mutate() {
 const randDnaBase = returnRandBase(); // call returnRandBase function to select a random base and assign to variable randDnaBase
   const randBaseIndex = this.dna.indexOf(randDnaBase); // find the first index where the random base appears in the strand
@@ -61,19 +61,17 @@ if (randBaseIndex !== -1) {
     if (survivalPercentage >= 60){
       return true;
       // console.log('The survival percentage of this organism is ' +survivalPercentage + '%.  This organism WILL likely survive.'); 
-      // willLikelySurvive is working but logs this to console endlessly when this console.log is run
+      // willLikelySurvive is working but logs this to console almost endlessly when this console.log is run
     } else {
       return false;
     // console.log('The survival percentage of this organism is ' +survivalPercentage + '%.  This organism will likely NOT survive.');
-  // willLikelySurvive is working but logs this to console endlessly when this console.log is run  
+  // willLikelySurvive is working but logs this to console almost endlessly when this console.log is run  
   }
    } // end of willLikelySurvive function
   }; // end of return  
 }; // end of pAequor factory function
 
 const survivingPAequor = [];
-let pAequorCount = 0;
-
   let objectNum = 1;
   while (survivingPAequor.length < 30) {
   let newObject = pAequorFactory(objectNum, mockUpStrand());
@@ -82,15 +80,10 @@ survivingPAequor.push(newObject);
 // console.log('survivingPAequor: ' + survivingPAequor); 
 // console.log('surivingPAequor.length: ' + survivingPAequor.length);
 //survivingPAequor is working as intended withe the exception of returning [object, Object] instead of the actual data
-
   }
-pAequorCount++;
+objectNum++;
 }
-  // console.log('pAequors that will likely survive: ' + survivingPAequor);
-
-
-console.log('willLikelySurvive: ' + pAequorFactory(1, mockUpStrand).willLikelySurvive());
-
+console.log('pAequors that will likely survive: ' + survivingPAequor);
 
 
 
