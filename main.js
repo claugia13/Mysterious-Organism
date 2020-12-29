@@ -83,7 +83,8 @@ survivingPAequor.push(newObject);
   }
 objectNum++;
 }
-console.log('pAequors that will likely survive: ' + survivingPAequor);
+console.log('pAequors that will likely survive: ');
+console.log(survivingPAequor);
 
 
 
